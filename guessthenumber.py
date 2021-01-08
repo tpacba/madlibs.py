@@ -22,9 +22,14 @@ def computer_guess(x):
     low = 0
     high = x
     correct_guess = False
+    count = 0
 
     while correct_guess == False:
         random_number = random.randint(low,high)
+        count += 1
+
+        print(f"Attempt #{count}")
+        print(f"Is the number {random_number}?")
 
         answer = inquirer.prompt([
             inquirer.List(
@@ -34,6 +39,13 @@ def computer_guess(x):
             )
         ])
 
+        if answer.get("answer") == "Too Low":
+            low = random_number + 1
+        elif answer.get("answer") == "Too High":
+            high = random_number - 1
+        elif answer.get("answer") == "Correct":
+            correct_guess = True
 
+    print(f"Nice work! It took {count} guesses.")
 
 computer_guess(10)
