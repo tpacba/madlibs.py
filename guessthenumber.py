@@ -48,4 +48,7 @@ def computer_guess(x):
 
     print(f"Nice work! It took {count} guesses.")
 
-computer_guess(10)
+
+max = int(input("Give a range, 0 to ___: "))
+enter = input(f"Think of a number from 1 to {max} and I'll guess it. \n (Press Enter to start.)")
+computer_guess(max)
