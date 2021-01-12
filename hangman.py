@@ -15,9 +15,6 @@ def hangman():
 
     lives = 10
 
-    print(word)
-    print(word_letters)
-
     while len(word_letters) > 0 and lives > 0:
         print("You have used these letters: ", " ".join(used_letters))
         print(f"You have {lives} left")
